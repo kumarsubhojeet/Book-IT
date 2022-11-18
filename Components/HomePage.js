@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import RoomItems from "./room/roomItems";
 
 const HomePage = () => {
-  const { rooms } = useSelector(state => state);
+  const { rooms } = useSelector(state => state.allRooms);
   console.log(rooms);
 
   return (
