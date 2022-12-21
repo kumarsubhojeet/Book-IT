@@ -1,13 +1,18 @@
-import React from "react";
+import React , {useState , useEffect} from "react";
 import { Button } from "antd";
 import { BsArrowLeft } from "react-icons/bs";
-
-import { useSelector } from "react-redux";
+import {getRooms} from '../redux/action/roomAction'
+import { useDispatch ,useSelector } from "react-redux";
 import RoomItems from "./room/roomItems";
 
 const HomePage = () => {
+  const dispatch  = useDispatch()
   const { rooms } = useSelector(state => state.allRooms);
   console.log(rooms);
+
+  useEffect(()=>{
+    dispatch(getRooms())
+  },[])
 
   return (
     <>
